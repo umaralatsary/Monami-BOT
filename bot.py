@@ -218,7 +218,7 @@ class Monami:
         for attempt in range(max_retries):
             self.log(f"{Fore.CYAN}Attempting SeleniumBase login for {email} (Attempt {attempt + 1}/{max_retries}){Style.RESET_ALL}")
             try:
-                with SB(uc=True, xvfb=True, headless) as sb:
+                with SB(uc=True, xvfb=True, headless=True) as sb:
                     sb.uc_open(login_url)
                     sb.type('input[name="email"]', email)
                     sb.type('input[name="password"]', password)
